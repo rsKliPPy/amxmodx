@@ -1,0 +1,34 @@
+"Games"
+{
+	"cstrike"
+	{
+		"HamData"
+		{
+			"pev"
+			{
+				"linux"		"4"
+				"windows"	"4"
+				"mac"		"4"
+			}
+			"base"
+			{
+				"linux"		"0"
+				"windows"	"0"
+				"mac"		"0"
+			}
+
+			"spawn"
+			{
+				"linux"		"0"
+				"windows"	"0"
+				"mac"		"0"
+			}
+			"killed"
+			{
+				"linux"		"14"
+				"windows"	"14"
+				"mac"		"14"
+			}
+		}
+	}
+}

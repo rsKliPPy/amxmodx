@@ -23,6 +23,7 @@
 #include <assert.h>
 #include "DataHandler.h"
 #include "hook_specialbot.h"
+#include "config_parser.h"
 #include <HLTypeConversion.h>
 
 HLTypeConversion TypeConversion;
@@ -36,8 +37,6 @@ extern AMX_NATIVE_INFO pdata_natives[];
 extern AMX_NATIVE_INFO pdata_natives_safe[];
 
 extern hook_t hooklist[];
-
-int ReadConfig(void);
 
 void OnAmxxAttach(void)
 {
@@ -64,6 +63,9 @@ void OnAmxxAttach(void)
 	assert(strcmp(hooklist[Ham_Item_GetItemInfo].name, "item_getiteminfo") == 0);
 
 	MF_AddNatives(pdata_natives_safe);
+
+	g_ConfigManager = MF_GetConfigManager();
+	g_ConfigManager->AddUserConfigHook("HamData", &g_HamDataManager);
 
 	if (ReadConfig() > 0)
 	{
